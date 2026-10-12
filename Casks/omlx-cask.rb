@@ -1,4 +1,4 @@
-cask "omlx" do
+cask "omlx-cask" do
   # This cask installs oMLX from the prebuilt DMGs on GitHub without pinning a
   # version or checksum. HOMEBREW_OMLX_VERSION selects what to install (Homebrew
   # only forwards HOMEBREW_-prefixed variables to this file):
@@ -79,9 +79,9 @@ cask "omlx" do
   caveats <<~EOS
     This cask installs the latest stable oMLX release and does not verify
     checksums. Select a different release with HOMEBREW_OMLX_VERSION:
-      HOMEBREW_OMLX_VERSION=rc     brew install --cask omlx   # latest stable-or-rc
-      HOMEBREW_OMLX_VERSION=pre    brew install --cask omlx   # latest dev/rc
-      HOMEBREW_OMLX_VERSION=0.7.0  brew install --cask omlx   # exact version
+      HOMEBREW_OMLX_VERSION=rc     brew install --cask omlx-cask   # latest stable-or-rc
+      HOMEBREW_OMLX_VERSION=pre    brew install --cask omlx-cask   # latest dev/rc
+      HOMEBREW_OMLX_VERSION=0.7.0  brew install --cask omlx-cask   # exact version
 
     oMLX downloads models into the shared Hugging Face cache (~/.cache/huggingface),
     which is intentionally left untouched by `brew uninstall --zap`.

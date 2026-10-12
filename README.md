@@ -13,7 +13,7 @@ while the formula remains the source-built CLI. The two are designed to coexist.
 
 ```sh
 brew tap rypit/omlx https://github.com/rypit/homebrew-omlx
-brew install --cask omlx
+brew install --cask omlx-cask
 ```
 
 The cask does not pin a version. On each install it resolves the **latest
@@ -45,16 +45,16 @@ the cask is not eligible for the official `Homebrew/homebrew-cask` repo.
 
 ```sh
 # latest stable
-brew install --cask omlx
+brew install --cask omlx-cask
 
 # latest release candidate (no dev builds)
-HOMEBREW_OMLX_VERSION=rc brew install --cask omlx
+HOMEBREW_OMLX_VERSION=rc brew install --cask omlx-cask
 
 # latest dev/rc prerelease
-HOMEBREW_OMLX_VERSION=pre brew install --cask omlx
+HOMEBREW_OMLX_VERSION=pre brew install --cask omlx-cask
 
 # a specific release (leading "v" optional)
-HOMEBREW_OMLX_VERSION=0.6.4 brew install --cask omlx
+HOMEBREW_OMLX_VERSION=0.6.4 brew install --cask omlx-cask
 ```
 
 An exact tag skips the releases-feed lookup entirely. Only install versions you
@@ -67,7 +67,7 @@ trust (checksums are not verified).
 ## The `omlx` CLI
 
 The cask links an `omlx` command onto your `PATH` (from the CLI bundled inside
-`oMLX.app`), so a plain `brew install --cask omlx` gives you both the app and the
+`oMLX.app`), so a plain `brew install --cask omlx-cask` gives you both the app and the
 CLI.
 
 If the `omlx` **formula** (`brew install omlx`) is also installed, it owns the
@@ -78,8 +78,8 @@ formula wins. Either way you also get the shim the app installs at
 ## Uninstall
 
 ```sh
-brew uninstall --cask omlx        # remove the app
-brew uninstall --cask --zap omlx  # also remove ~/.omlx, ~/.config/omlx, caches, prefs
+brew uninstall --cask omlx-cask        # remove the app
+brew uninstall --cask --zap omlx-cask  # also remove ~/.omlx, ~/.config/omlx, caches, prefs
 ```
 
 `--zap` intentionally leaves the shared Hugging Face model cache
@@ -87,7 +87,7 @@ brew uninstall --cask --zap omlx  # also remove ~/.omlx, ~/.config/omlx, caches,
 
 ## Notes
 
-- `brew audit --cask --online omlx` reports one benign finding: the app bundle
+- `brew audit --cask --online omlx-cask` reports one benign finding: the app bundle
   declares `LSMinimumSystemVersion` 15.0, while the cask gates the macOS-26/27
   build behind `on_tahoe`. Upstream ships distinct per-macOS builds (they differ
   in the bundled MLX/Metal frameworks) that both carry the same
