@@ -1,4 +1,4 @@
-# homebrew-omlx (cask)
+# omlx-cask
 
 A Homebrew **cask** that installs [oMLX](https://github.com/jundot/omlx) — a
 production-ready LLM server for Apple Silicon — from the prebuilt `.dmg` app
@@ -12,7 +12,7 @@ while the formula remains the source-built CLI. The two are designed to coexist.
 ## Install
 
 ```sh
-brew tap rypit/omlx https://github.com/rypit/homebrew-omlx
+brew tap rypit/omlx-cask https://github.com/rypit/omlx-cask
 brew install --cask omlx-cask
 ```
 
